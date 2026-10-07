@@ -16,13 +16,13 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #f8f8f4;
-            color: #333;
+            background-color: #FAF8F1;
+            color: #333333;
             line-height: 1.6;
         }
 
         header {
-            background-color: #285943;
+            background-color: #3557A5;
             color: white;
             text-align: center;
             padding: 70px 20px;
@@ -41,8 +41,8 @@
 
         .button {
             display: inline-block;
-            background-color: #f2b84b;
-            color: #222;
+            background-color: #D9AE3B;
+            color: #333333;
             padding: 13px 28px;
             border-radius: 5px;
             text-decoration: none;
@@ -61,7 +61,7 @@
         }
 
         section h2 {
-            color: #285943;
+            color: #3557A5;
             font-size: 32px;
             margin-bottom: 20px;
         }
@@ -77,7 +77,7 @@
         }
 
         .contact a {
-            color: #285943;
+            color: #3557A5;
             font-weight: bold;
             text-decoration: none;
         }
@@ -91,12 +91,18 @@
         }
 
         footer {
-            background-color: #285943;
+            background-color: #3557A5;
             color: white;
             text-align: center;
             padding: 25px 20px;
             font-size: 14px;
         }
+        .logo {
+                display: block;
+                width: 200px;
+                height: auto;
+                margin: 0 auto 20px;
+            }    
 
         @media (max-width: 600px) {
             header h1 {
@@ -111,27 +117,27 @@
                 font-size: 28px;
             }
 
-            .construction-banner {
-    background: #f7f1d1;
-    color: #3f4a3f;
-    text-align: center;
-    padding: 14px 20px;
-    width: 100%;
-    box-sizing: border-box;
-    border-bottom: 1px solid #e5dcae;
-    font-size: 14px;
-}
+        .construction-banner {
+                background: #f7f1d1;
+                color: #3f4a3f;
+                text-align: center;
+                padding: 14px 20px;
+                width: 100%;
+                box-sizing: border-box;
+                border-bottom: 1px solid #e5dcae;
+                font-size: 14px;
+            }
 
-.construction-banner strong {
-    display: inline-block;
-    margin-right: 8px;
-    color: #2f5d3a;
-    font-weight: 700;
-}
+        .construction-banner strong {
+                display: inline-block;
+                margin-right: 8px;
+                color: #2f5d3a;
+                font-weight: 700;
+            }
 
-.construction-banner span {
-    font-weight: 400;
-}
+        .construction-banner span {
+                font-weight: 400;
+            }
         }
         
     </style>
@@ -145,35 +151,42 @@
 </div>
     
     <header>
+        <img class="logo" src="images/logo.jpg" alt="Peel Food Link logo">
         <h1>Peel Food Link</h1>
 
         <p>
-            Supporting our community and helping address food insecurity
-            throughout Peel Region.
+            More than food, It's Access.
         </p>
 
-        <a class="button" href="mailto:peelfoodlink@gmail.com">
+        <a class="button" href="#contact">
             Contact Us
         </a>
     </header>
 
+<section>
+    <h2>About Us</h2>
+    <p>Peel Food Link is a registered non-profit organization serving Brampton, Mississauga and Caledon through a mobile food support model.</p>
+    <p>We believe everyone deserves access to nutritious food with dignity, compassion and respect, regardless of their circumstances.</p>
+    <p>By removing transportation, mobility and accessibility barriers, we connect individuals and families with essential food resources while fostering hope, inclusion and community.</p>
+    <p>Through dedicated volunteers, strategic partnerships and a commitment to service, Peel Food Link works to ensure that no one is left behind.</p>
 
-    <section>
-        <h2>About Peel Food Link</h2>
+    <h2>Our Mission</h2>
+    <p><strong>Committed to Service</strong></p>
+    <p>We are dedicated to reducing food insecurity by providing equitable, accessible and dignified food support to individuals and families who face barriers to accessing traditional food banks.</p>
+    <p>Through community partnerships, we nourish communities and empower lives.</p>
+    <p><em> Stay Tuned! We are growing and creating new opportunities to serve our community. More programs, initiatives, and community updates are coming soon. Follow us and stay connected with Peel Food Link.</em></p>
 
-        <p>
-            Peel Food Link is a grassroots initiative of Legacy Community
-            Services, supporting the Peel Region since 2014.
-        </p>
-
-        <p>
-            Through strong partnerships, we help address food insecurity
-            and uplift our community.
-        </p>
-    </section>
+    <h2>Announcements</h2>
+    <p><strong>Youth Community Volunteer Opportunities</strong></p>
+    <p>Are you a youth between the ages of 14–18 looking to complete your community volunteer hours?</p>
+    <p>Peel Food Link is currently accepting youth volunteers!</p>
+    <p>This is an opportunity to give back, gain valuable community experience, develop new skills, and make a meaningful difference in the lives of individuals and families in our community.</p>
+    <strong>Registration is now open.</strong><br> 👉Register using the link below</br></p>
+    <p>Together, we can make a difference... one family, one community, one meal at a time.</p>
+</section>
 
 
-    <section class="contact">
+    <section class="contact" id="contact">
         <h2>Contact Us</h2>
 
         <p>
@@ -191,7 +204,7 @@
         </p>
 
         <p>
-            Donations are welcome:
+            Donations are welcome. Etransfer: 
             <a href="mailto:peelfoodlink@gmail.com">
                 peelfoodlink@gmail.com
             </a>
@@ -205,4 +218,3 @@
 
 </body>
 </html>
-```
