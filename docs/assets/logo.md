@@ -1,1 +1,1 @@
-![logo](/chantelw.github.io/assets/logo.jpg)
+![logo](/assets/logo.jpg)
