@@ -1,220 +1,969 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Peel Food Link</title>
+    <title>Peel Food Link | Supporting Our Community</title>
+    <meta name="description" content="Peel Food Link is a grassroots initiative of Legacy Community Services, supporting the Peel Region and helping address food insecurity.">
 
     <style>
+        :root {
+            --blue: #123b73;
+            --blue-dark: #0b2850;
+            --blue-light: #eaf0f8;
+            --gold: #d4af37;
+            --gold-light: #f5e9bb;
+            --white: #ffffff;
+            --off-white: #f8f8f6;
+            --text: #1d2733;
+            --muted: #657181;
+            --border: #e4e7eb;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #FAF8F1;
-            color: #333333;
-            line-height: 1.6;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
         }
 
-        header {
-            background-color: #3557A5;
-            color: white;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           UNDER CONSTRUCTION BANNER
+        ========================= */
+
+        .construction-banner {
+            background: var(--gold-light);
+            color: var(--blue-dark);
             text-align: center;
-            padding: 70px 20px;
+            padding: 11px 20px;
+            border-bottom: 1px solid #e5dcae;
+            font-size: 13px;
+            letter-spacing: .02em;
         }
 
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+        .construction-banner strong {
+            color: var(--blue);
+            font-weight: 700;
+            margin-right: 8px;
         }
 
-        header p {
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 24px 5%;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: .12em;
+        }
+
+        .logo-mark {
+            width: 39px;
+            height: 39px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,.9);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            transition: color .2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .menu-button {
+            display: none;
+            border: 1px solid rgba(255,255,255,.5);
+            background: transparent;
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
             font-size: 20px;
-            max-width: 650px;
-            margin: 0 auto 30px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 720px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 78% 25%, rgba(212,175,55,.22), transparent 28%),
+                linear-gradient(115deg, rgba(8,30,61,.98) 0%, rgba(18,59,115,.94) 52%, rgba(25,76,135,.82) 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 620px;
+            height: 620px;
+            right: -190px;
+            bottom: -280px;
+            border: 1px solid rgba(212,175,55,.35);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            right: 40px;
+            top: 145px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 130px 5% 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+    align-items: center;
+    gap: 36px;
+}
+
+.hero-copy {
+    max-width: 720px;
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: translateY(-40px);
+}
+
+.hero-logo-wrap {
+    width: min(100%, 420px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(212,175,55,.38);
+    box-shadow: 0 20px 60px rgba(4,17,37,.2);
+    backdrop-filter: blur(3px);
+}
+
+.hero-logo-wrap img {
+    width: 73%;
+    height: 73%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(5, 19, 36, .28));
+}
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 34px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: clamp(48px, 7vw, 88px);
+            line-height: .98;
+            font-weight: 300;
+            letter-spacing: -.045em;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 strong {
+            font-weight: 750;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,.82);
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 38px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
         }
 
         .button {
-            display: inline-block;
-            background-color: #D9AE3B;
-            color: #333333;
-            padding: 13px 28px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 49px;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            transition: transform .2s ease, background .2s ease;
         }
 
         .button:hover {
-            background-color: #e2a735;
+            transform: translateY(-2px);
         }
 
-        section {
-            max-width: 800px;
-            margin: auto;
-            padding: 60px 20px;
+        .button-primary {
+            background: var(--gold);
+            color: var(--blue-dark);
+        }
+
+        .button-primary:hover {
+            background: #e2c45a;
+        }
+
+        .button-outline {
+            border: 1px solid rgba(255,255,255,.55);
+            color: var(--white);
+        }
+
+        .button-outline:hover {
+            background: rgba(255,255,255,.1);
+        }
+
+        /* =========================
+           INTRO / ABOUT
+        ========================= */
+
+        .intro {
+            padding: 110px 5%;
+            background: var(--white);
+        }
+
+        .section-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: .75fr 1.25fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .section-label {
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .intro h2,
+        .section-heading h2 {
+            color: var(--blue);
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.05;
+            letter-spacing: -.035em;
+            font-weight: 700;
+        }
+
+        .intro-text p {
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .gold-line {
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            margin: 22px 0 28px;
+        }
+
+        /* =========================
+           FEATURE SECTION
+        ========================= */
+
+        .features {
+            background: var(--off-white);
+            padding: 105px 5%;
+        }
+
+        .section-heading {
+            max-width: 1100px;
+            margin: 0 auto 55px;
             text-align: center;
         }
 
-        section h2 {
-            color: #3557A5;
-            font-size: 32px;
-            margin-bottom: 20px;
+        .section-heading .gold-line {
+            margin: 22px auto 0;
         }
 
-        section p {
-            font-size: 18px;
-            margin-bottom: 20px;
+        .feature-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .contact {
-            background-color: white;
-            border-top: 1px solid #ddd;
+        .feature-card {
+            background: var(--white);
+            padding: 42px 34px;
+            border-top: 3px solid var(--gold);
+            min-height: 245px;
+            box-shadow: 0 12px 35px rgba(18,59,115,.06);
+            transition: transform .2s ease, box-shadow .2s ease;
         }
 
-        .contact a {
-            color: #3557A5;
-            font-weight: bold;
-            text-decoration: none;
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 45px rgba(18,59,115,.1);
         }
 
-        .contact a:hover {
-            text-decoration: underline;
+        .feature-number {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .15em;
+            margin-bottom: 23px;
         }
 
-        .instagram {
-            margin-top: 15px;
+        .feature-card h3 {
+            color: var(--blue);
+            font-size: 22px;
+            margin-bottom: 13px;
         }
 
-        footer {
-            background-color: #3557A5;
-            color: white;
-            text-align: center;
-            padding: 25px 20px;
+        .feature-card p {
+            color: var(--muted);
             font-size: 14px;
         }
-        .logo {
+
+        /* =========================
+           COMMUNITY CTA
+        ========================= */
+
+        .cta {
+            padding: 105px 5%;
+            background: var(--blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(212,175,55,.22);
+            border-radius: 50%;
+            right: -200px;
+            top: -260px;
+        }
+
+        .cta-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta h2 {
+            color: var(--white);
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.05;
+            letter-spacing: -.04em;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: rgba(255,255,255,.75);
+            max-width: 650px;
+            margin: 0 auto 32px;
+            font-size: 16px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            padding: 95px 5%;
+            background: var(--white);
+        }
+
+        .contact-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: start;
+        }
+
+        .contact h2 {
+            color: var(--blue);
+            font-size: 42px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .contact-details {
+            border-left: 1px solid var(--border);
+            padding-left: 45px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item span {
+            display: block;
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: var(--blue);
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: var(--gold);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--blue-dark);
+            color: rgba(255,255,255,.65);
+            padding: 30px 5%;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .12em;
+        }
+
+        .footer-inner p {
+            font-size: 11px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+            .navbar {
+                top: 45px;
+                padding: 18px 6%;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 82px;
+                left: 5%;
+                right: 5%;
+                background: var(--blue-dark);
+                padding: 22px;
+                flex-direction: column;
+                gap: 18px;
+                box-shadow: 0 15px 30px rgba(0,0,0,.2);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .menu-button {
                 display: block;
-                width: 200px;
-                height: auto;
-                margin: 0 auto 20px;
-            }    
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 36px;
             }
 
-            header p {
-                font-size: 18px;
+            .hero {
+                min-height: 680px;
             }
 
-            section h2 {
-                font-size: 28px;
+            .hero-content {
+                padding: 135px 6% 70px;
             }
 
-        .construction-banner {
-                background: #f7f1d1;
-                color: #00008B;
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
                 text-align: center;
-                padding: 14px 20px;
-                width: 100%;
-                box-sizing: border-box;
-                border-bottom: 1px solid #e5dcae;
-                font-size: 14px;
             }
 
-        .construction-banner strong {
-                display: inline-block;
-                margin-right: 8px;
-                color: #00008B;
-                font-weight: 700;
+            .hero-copy {
+                max-width: none;
             }
 
-        .construction-banner span {
-                font-weight: 400;
+            .hero p {
+                font-size: 16px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .section-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .intro,
+            .features,
+            .cta,
+            .contact {
+                padding: 75px 6%;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-details {
+                border-left: 0;
+                border-top: 1px solid var(--border);
+                padding-left: 0;
+                padding-top: 35px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
             }
         }
-        
+
+        @media (max-width: 480px) {
+            .construction-banner {
+                font-size: 12px;
+                padding: 10px 15px;
+            }
+
+            .construction-banner strong {
+                display: block;
+                margin: 0 0 2px;
+            }
+
+            .logo {
+                font-size: 15px;
+            }
+
+            .logo-mark {
+                width: 34px;
+                height: 34px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
-    
-<div class="construction-banner">
-    <strong>Website currently being updated</strong>
-    <span>We're making a few improvements. Thank you for your patience!</span>
-</div>
-    
-    <header>
-        <img class="logo" src="/chantelw.github.io/docs/assets/logo.jpg" alt="Peel Food Link logo">
-        <h1>Peel Food Link</h1>
 
-        <p>
-            More than food, It's Access.
-        </p>
+    <!-- WEBSITE UPDATE BANNER -->
+    <div class="construction-banner">
+        <strong>Website currently being updated</strong>
+        <span>We're making a few improvements. Thank you for your patience!</span>
+    </div>
 
-        <a class="button" href="#contact">
-            Contact Us
-        </a>
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="nav-inner">
+
+            <a href="#top" class="logo">
+                <span class="logo-mark">PFL</span>
+                PEEL FOOD LINK
+            </a>
+
+            <button class="menu-button" id="menuButton" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#mission">Our Mission</a>
+                <a href="#announcements">Announcements</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
     </header>
 
-<section>
-    <h2>About Us</h2>
-    <p>Peel Food Link is a registered non-profit organization serving Brampton, Mississauga and Caledon through a mobile food support model.</p>
-    <p>We believe everyone deserves access to nutritious food with dignity, compassion and respect, regardless of their circumstances.</p>
-    <p>By removing transportation, mobility and accessibility barriers, we connect individuals and families with essential food resources while fostering hope, inclusion and community.</p>
-    <p>Through dedicated volunteers, strategic partnerships and a commitment to service, Peel Food Link works to ensure that no one is left behind.</p>
+    <!-- HERO -->
+    <main id="top">
 
-    <h2>Our Mission</h2>
-    <p><strong>Committed to Service</strong></p>
-    <p>We are dedicated to reducing food insecurity by providing equitable, accessible and dignified food support to individuals and families who face barriers to accessing traditional food banks.</p>
-    <p>Through community partnerships, we nourish communities and empower lives.</p>
-    <p><em> Stay Tuned! We are growing and creating new opportunities to serve our community. More programs, initiatives, and community updates are coming soon. Follow us and stay connected with Peel Food Link.</em></p>
+        <section class="hero">
 
-    <h2>Announcements</h2>
-    <p><strong>Youth Community Volunteer Opportunities</strong></p>
-    <p>Are you a youth between the ages of 14–18 looking to complete your community volunteer hours?</p>
-    <p>Peel Food Link is currently accepting youth volunteers!</p>
-    <p>This is an opportunity to give back, gain valuable community experience, develop new skills, and make a meaningful difference in the lives of individuals and families in our community.</p>
-    <strong>Registration is now open.</strong><br> 👉Register using the link below</br></p>
-    <p>Together, we can make a difference... one family, one community, one meal at a time.</p>
-</section>
+            <div class="hero-content">
 
+<div class="hero-inner">
+    <div class="hero-copy">
+        <div class="eyebrow">
+            Peel Region • Since 2014
+        </div>
 
-    <section class="contact" id="contact">
-        <h2>Contact Us</h2>
+        <h1>
+            More than food,<br>
+            <strong>it's access.</strong>
+        </h1>
 
         <p>
-            Email:
-            <a href="mailto:peelfoodlink@gmail.com">
-                peelfoodlink@gmail.com
-            </a>
+            Peel Food Link is a grassroots initiative supporting our community
+            and helping address food insecurity throughout Peel Region.
         </p>
 
-        <p class="instagram">
-            Instagram:
-            <a href="https://www.instagram.com/peelfoodlink/" target="_blank">
-                @peelfoodlink
+        <div class="hero-buttons">
+            <a href="#about" class="button button-primary">
+                Learn More
             </a>
-        </p>
 
-        <p>
-            Donations are welcome. Etransfer: 
-            <a href="mailto:peelfoodlink@gmail.com">
-                peelfoodlink@gmail.com
+            <a href="mailto:peelfoodlink@gmail.com" class="button button-outline">
+                Get Involved
             </a>
-        </p>
-    </section>
+        </div>
+    </div>
 
+    <div class="hero-visual" aria-label="Peel Food Link logo section">
+        <div class="hero-logo-wrap">
+            <img src="/chantelw.github.io/docs/assets/logo.jpg" alt="Peel Food Link logo">
+        </div>
+    </div>
+</div>
 
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section class="intro" id="about">
+
+            <div class="section-grid">
+
+                <div>
+                    <div class="section-label">Who We Are</div>
+
+                    <h2>
+                        Food.<br>
+                        Community.<br>
+                        Connection.
+                    </h2>
+
+                    <div class="gold-line"></div>
+                </div>
+
+                <div class="intro-text">
+
+                    <p>
+                        <strong>Peel Food Link</strong> is a registered non-profit organization
+                         serving Brampton, Mississauga and Caledon through a mobile food support model.
+                    </p>
+
+                    <p>
+                        We believe everyone deserves access to nutritious food with dignity, compassion
+                        and respect, regardless of their circumstances.
+                    </p>
+
+                    <p>
+                        By removing transportation, mobility and accessibility barriers, we connect individuals 
+                        and families with essential food resources while fostering hope, inclusion and community.
+                    </p>
+
+                    <p>Through dedicated volunteers, strategic partnerships and a commitment to service, Peel Food Link 
+                        works to ensure that no one is left behind.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- OUR MISSION -->
+        <section class="features" id="mission">
+
+            <div class="section-heading">
+
+                <div class="section-label">Our Mission</div>
+
+                <h2>
+                    Committed<br>
+                    to service.
+                </h2>
+
+                <div class="gold-line"></div>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+                    <div class="feature-number">01</div>
+                    <h3>Food Security</h3>
+                    <p>
+                        We are dedicated to reducing food insecurity by providing equitable,
+                        accessible and dignified food support to individuals and families who
+                        face barriers to accessing traditional food banks.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-number">02</div>
+                    <h3>Community</h3>
+                    <p>
+                        Building strong partnerships and connections that
+                        help uplift our local community.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-number">03</div>
+                    <h3>Partnerships</h3>
+                    <p>Through community partnerships, we nourish communities and empower lives.
+
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Announcements CTA -->
+        <section class="cta" id="announcements">
+
+            <div class="cta-inner">
+
+                <div class="section-label">Get Involved</div>
+
+                <h2>
+                    Announcements<br>
+                </h2>
+
+                <h3>Youth Community Volunteer Opportunities<br>
+                </h3>
+
+                <p>
+                    Are you a youth between the ages of 14–18 looking 
+                    to complete your community volunteer hours?
+                </p>
+
+                <p>Peel Food Link is currently accepting youth volunteers!
+                </p>
+
+                <p>This is an opportunity to give back, gain valuable community experience, 
+                   develop new skills, and make a meaningful difference in the lives of individuals
+                   and families in our community.
+                </p>
+
+                <p>Together, we can make a difference... one family, one community, one meal at a time.
+                </p>
+
+                <p>Registration is now open.</p>
+
+                <a href="mailto:peelfoodlink@gmail.com" class="button button-primary">
+                    Contact Peel Food Link
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+
+            <div class="contact-grid">
+
+                <div>
+                    <div class="section-label">Contact</div>
+
+                    <h2>
+                        Let's connect.
+                    </h2>
+
+                    <p>
+                        For questions, partnerships, donations, or more information
+                        about Peel Food Link, please get in touch.
+                    </p>
+                </div>
+
+                <div class="contact-details">
+
+                    <div class="contact-item">
+                        <span>Email</span>
+                        <a href="mailto:peelfoodlink@gmail.com">
+                            peelfoodlink@gmail.com
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>Instagram</span>
+                        <a href="https://www.instagram.com/peelfoodlink/" target="_blank" rel="noopener">
+                            @peelfoodlink
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>Donations</span>
+                        <a href="mailto:peelfoodlink@gmail.com">
+                            Donations welcome
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Peel Food Link. All rights reserved.</p>
+        <div class="footer-inner">
+
+            <div class="footer-logo">
+                © 2026 Peel Food Link. All rights reserved.
+            </div>
+
+            <p>
+                A grassroots initiative of Legacy Community Services • Supporting Peel Region since 2014
+            </p>
+
+        </div>
     </footer>
+
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        menuButton.addEventListener("click", function () {
+            navLinks.classList.toggle("open");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+            });
+        });
+    </script>
 
 </body>
 </html>
