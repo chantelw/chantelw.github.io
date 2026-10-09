@@ -459,6 +459,27 @@
             font-size: 16px;
         }
 
+        .announcement-card {
+            max-width: 760px;
+            margin: 30px auto 0;
+            padding: 42px 34px;
+            background: var(--white);
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 12px 35px rgba(18,59,115,.12);
+            text-align: center;
+        }
+
+        .announcement-card h3 {
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+
+        .announcement-card p {
+            color: var(--muted);
+            max-width: none;
+            margin: 0 0 18px;
+        }
+
         /* =========================
            CONTACT
         ========================= */
@@ -558,6 +579,10 @@
                 padding: 18px 6%;
             }
 
+            .nav-inner {
+                gap: 16px;
+            }
+
             .nav-links {
                 display: none;
                 position: absolute;
@@ -580,16 +605,16 @@
             }
 
             .hero {
-                min-height: 680px;
+                min-height: 0;
             }
 
             .hero-content {
-                padding: 135px 6% 70px;
+                padding: 135px 6% 56px;
             }
 
             .hero-inner {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 12px;
                 text-align: center;
             }
 
@@ -607,6 +632,14 @@
                 justify-content: center;
             }
 
+            .hero-visual {
+                transform: none;
+            }
+
+            .hero-logo-wrap {
+                width: min(100%, 280px);
+            }
+
             .section-grid,
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -622,6 +655,15 @@
 
             .feature-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                min-height: 0;
+                padding: 32px 28px;
+            }
+
+            .announcement-card {
+                padding: 34px 28px;
             }
 
             .contact-details {
@@ -649,7 +691,8 @@
             }
 
             .logo {
-                font-size: 15px;
+                font-size: 14px;
+                letter-spacing: .08em;
             }
 
             .logo-mark {
@@ -657,17 +700,65 @@
                 height: 34px;
             }
 
+            .navbar {
+                padding-right: 5%;
+                padding-left: 5%;
+            }
+
+            .menu-button {
+                flex: 0 0 42px;
+            }
+
+            .hero-content {
+                padding: 125px 6% 44px;
+            }
+
             .hero h1 {
-                font-size: 50px;
+                font-size: clamp(40px, 12vw, 50px);
+            }
+
+            .hero-logo-wrap {
+                width: min(68vw, 230px);
+            }
+
+            .intro,
+            .features,
+            .cta,
+            .contact {
+                padding: 58px 6%;
+            }
+
+            .section-grid,
+            .contact-grid {
+                gap: 28px;
+            }
+
+            .announcement-card {
+                margin-top: 22px;
+                padding: 28px 20px;
+            }
+
+            .announcement-card p {
+                overflow-wrap: anywhere;
+            }
+
+            .hero h1 {
+                margin-bottom: 22px;
             }
 
             .hero-buttons {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: center;
+                gap: 10px;
             }
 
-            .button {
-                width: 100%;
+            .hero-buttons .button {
+                width: min(100%, 260px);
+            }
+
+            .contact-item a {
+                font-size: 16px;
+                overflow-wrap: anywhere;
             }
         }
     </style>
@@ -690,7 +781,7 @@
                 PEEL FOOD LINK
             </a>
 
-            <button class="menu-button" id="menuButton" aria-label="Open navigation">
+            <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
                 ☰
             </button>
 
@@ -857,30 +948,34 @@
                     Announcements<br>
                 </h2>
 
-                <h3>Youth Community Volunteer Opportunities<br>
-                </h3>
+                <div class="announcement-card">
 
-                <p>
-                    Are you a youth between the ages of 14–18 looking 
-                    to complete your community volunteer hours?
-                </p>
+                    <h3>Youth Community Volunteer Opportunities<br>
+                    </h3>
 
-                <p>Peel Food Link is currently accepting youth volunteers!
-                </p>
+                    <p>
+                        Are you a youth between the ages of 14–18 looking 
+                        to complete your community volunteer hours?
+                    </p>
 
-                <p>This is an opportunity to give back, gain valuable community experience, 
-                   develop new skills, and make a meaningful difference in the lives of individuals
-                   and families in our community.
-                </p>
+                    <p>Peel Food Link is currently accepting youth volunteers!
+                    </p>
 
-                <p>Together, we can make a difference... one family, one community, one meal at a time.
-                </p>
+                    <p>This is an opportunity to give back, gain valuable community experience, 
+                       develop new skills, and make a meaningful difference in the lives of individuals
+                       and families in our community.
+                    </p>
 
-                <p>Registration is now open.</p>
+                    <p>Together, we can make a difference... one family, one community, one meal at a time.
+                    </p>
 
-                <a href="mailto:peelfoodlink@gmail.com" class="button button-primary">
-                    Contact Peel Food Link
-                </a>
+                    <p>Registration is now open.</p>
+
+                    <a href="mailto:peelfoodlink@gmail.com" class="button button-primary">
+                        Register Here
+                    </a>
+
+                </div>
 
             </div>
 
@@ -923,7 +1018,7 @@
                     <div class="contact-item">
                         <span>Donations</span>
     
-                           <p>eTransfer: peelfoodbank@gmail.com </p> 
+                           <p><strong>e-Transfer: peelfoodbank@gmail.com</strong></p> 
                     </div>
 
                 </div>
@@ -954,12 +1049,16 @@
         const navLinks = document.getElementById("navLinks");
 
         menuButton.addEventListener("click", function () {
-            navLinks.classList.toggle("open");
+            const isOpen = navLinks.classList.toggle("open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
         });
 
         document.querySelectorAll(".nav-links a").forEach(function (link) {
             link.addEventListener("click", function () {
                 navLinks.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Open navigation");
             });
         });
     </script>
