@@ -68,6 +68,10 @@
             margin-right: 8px;
         }
 
+        .site-header {
+            position: relative;
+        }
+
         /* =========================
            NAVIGATION
         ========================= */
@@ -575,7 +579,7 @@
 
         @media (max-width: 800px) {
             .navbar {
-                top: 45px;
+                top: 100%;
                 padding: 18px 6%;
             }
 
@@ -634,6 +638,7 @@
 
             .hero-visual {
                 transform: none;
+                order: -1;
             }
 
             .hero-logo-wrap {
@@ -766,34 +771,36 @@
 
 <body>
 
-    <!-- WEBSITE UPDATE BANNER -->
-    <div class="construction-banner">
-        <strong>Website currently being updated</strong>
-        <span>We're making a few improvements. Thank you for your patience!</span>
-    </div>
-
-    <!-- NAVIGATION -->
-    <header class="navbar">
-        <div class="nav-inner">
-
-            <a href="#top" class="logo">
-                <span class="logo-mark">PFL</span>
-                PEEL FOOD LINK
-            </a>
-
-            <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
-                ☰
-            </button>
-
-            <nav class="nav-links" id="navLinks">
-                <a href="#about">About</a>
-                <a href="#mission">Our Mission</a>
-                <a href="#announcements">Announcements</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
+    <div class="site-header">
+        <!-- WEBSITE UPDATE BANNER -->
+        <div class="construction-banner">
+            <strong>Website currently being updated</strong>
+            <span>We're making a few improvements. Thank you for your patience!</span>
         </div>
-    </header>
+
+        <!-- NAVIGATION -->
+        <header class="navbar">
+            <div class="nav-inner">
+
+                <a href="#top" class="logo">
+                    <span class="logo-mark">PFL</span>
+                    PEEL FOOD LINK
+                </a>
+
+                <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
+                    ☰
+                </button>
+
+                <nav class="nav-links" id="navLinks">
+                    <a href="#about">About</a>
+                    <a href="#mission">Our Mission</a>
+                    <a href="#announcements">Announcements</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+            </div>
+        </header>
+    </div>
 
     <!-- HERO -->
     <main id="top">
