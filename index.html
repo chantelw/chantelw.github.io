@@ -485,6 +485,49 @@
         }
 
         /* =========================
+           RESOURCES
+        ========================= */
+
+        .resources {
+            padding: 105px 5%;
+            background: var(--off-white);
+        }
+
+        .resources-card {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 42px 34px;
+            background: var(--white);
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 12px 35px rgba(18,59,115,.08);
+            text-align: center;
+        }
+
+        .resources-card p {
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .resources-card .button {
+            margin-bottom: 20px;
+        }
+
+        .resources-card .resources-211 {
+            margin: 0;
+        }
+
+        .resources-card a:not(.button) {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .resources-card a:not(.button):hover {
+            color: var(--gold);
+        }
+
+        /* =========================
            CONTACT
         ========================= */
 
@@ -671,6 +714,10 @@
                 padding: 34px 28px;
             }
 
+            .resources-card {
+                padding: 34px 28px;
+            }
+
             .contact-details {
                 border-left: 0;
                 border-top: 1px solid var(--border);
@@ -743,6 +790,14 @@
                 padding: 28px 20px;
             }
 
+            .resources {
+                padding: 58px 6%;
+            }
+
+            .resources-card {
+                padding: 28px 20px;
+            }
+
             .announcement-card p {
                 overflow-wrap: anywhere;
             }
@@ -795,6 +850,7 @@
                     <a href="#about">About</a>
                     <a href="#mission">Our Mission</a>
                     <a href="#announcements">Announcements</a>
+                    <a href="#resources">Resources</a>
                     <a href="#contact">Contact</a>
                 </nav>
 
@@ -821,7 +877,7 @@
         </h1>
 
         <p>
-            Peel Food Link is a grassroots initiative supporting our community
+            Peel Food Link is a registered non-profit supporting our community
             and helping address food insecurity throughout Peel Region.
         </p>
 
@@ -984,6 +1040,36 @@
 
                 </div>
 
+            </div>
+
+        </section>
+
+        <!-- RESOURCES -->
+        <section class="resources" id="resources">
+
+            <div class="section-heading">
+                <div class="section-label">Resources</div>
+                <h2>Find food support.</h2>
+                <div class="gold-line"></div>
+            </div>
+
+            <div class="resources-card">
+                <p>
+                    Peel Food Map contains links to current food programs available
+                    to support the community. If you're looking for additional
+                    assistance with food, visit the Peel Food Map.
+                </p>
+
+                <a href="https://www.arcgis.com/apps/instant/sidebar/index.html?appid=e44b02e4a5494958bac532d4e981f910"
+                   class="button button-primary" target="_blank" rel="noopener">
+                    Open Peel Food Map
+                </a>
+
+                <p class="resources-211">
+                    You can also dial <a href="tel:211">211</a> or visit
+                    <a href="https://211ontario.ca/" target="_blank" rel="noopener">211 Ontario</a>
+                    for more services in your area.
+                </p>
             </div>
 
         </section>
