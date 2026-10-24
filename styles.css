@@ -476,6 +476,43 @@
             margin: 0 0 18px;
         }
 
+        .privacy-page {
+            padding: 80px 5%;
+            background: var(--off-white);
+        }
+
+        .privacy-page h1 {
+            color: var(--blue);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .privacy-card {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 42px 34px;
+            background: var(--white);
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 12px 35px rgba(18,59,115,.12);
+            text-align: center;
+        }
+
+        .privacy-card p {
+            color: var(--muted);
+            margin: 0 0 18px;
+        }
+
+        .privacy-card a {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .privacy-card a:hover {
+            color: var(--gold);
+        }
+
         /* =========================
            RESOURCES
         ========================= */
@@ -706,6 +743,10 @@
                 padding: 34px 28px;
             }
 
+            .privacy-card {
+                padding: 34px 28px;
+            }
+
             .resources-card {
                 padding: 34px 28px;
             }
@@ -779,6 +820,14 @@
 
             .announcement-card {
                 margin-top: 22px;
+                padding: 28px 20px;
+            }
+
+            .privacy-page {
+                padding: 58px 6%;
+            }
+
+            .privacy-card {
                 padding: 28px 20px;
             }
 
