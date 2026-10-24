@@ -494,7 +494,7 @@
             background: var(--white);
             border-top: 3px solid var(--gold);
             box-shadow: 0 12px 35px rgba(18,59,115,.12);
-            text-align: center;
+            text-align: justify;
         }
 
         .privacy-card p {
@@ -524,12 +524,16 @@
 
         .resources-card {
             max-width: 760px;
-            margin: 0 auto;
+            margin: 55px auto 0;
             padding: 42px 34px;
             background: var(--white);
             border-top: 3px solid var(--gold);
             box-shadow: 0 12px 35px rgba(18,59,115,.08);
             text-align: center;
+        }
+
+        .resources .feature-card .button {
+            margin-top: 8px;
         }
 
         .resources-card p {
@@ -554,6 +558,41 @@
 
         .resources-card a:not(.button):hover {
             color: var(--gold);
+        }
+
+        /* =========================
+           TESTIMONIALS
+        ========================= */
+
+        .testimonials {
+            padding: 95px 5%;
+            background: var(--white);
+        }
+
+        .testimonial-card {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 42px 38px;
+            background: var(--off-white);
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 12px 35px rgba(18,59,115,.08);
+        }
+
+        .testimonial-card p {
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .testimonial-card footer {
+            margin-top: 22px;
+            padding: 0;
+            background: transparent;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
         }
 
         /* =========================
@@ -726,6 +765,7 @@
             .intro,
             .features,
             .cta,
+            .testimonials,
             .contact {
                 padding: 75px 6%;
             }
@@ -748,6 +788,10 @@
             }
 
             .resources-card {
+                padding: 34px 28px;
+            }
+
+            .testimonial-card {
                 padding: 34px 28px;
             }
 
@@ -837,6 +881,18 @@
 
             .resources-card {
                 padding: 28px 20px;
+            }
+
+            .testimonials {
+                padding: 58px 6%;
+            }
+
+            .testimonial-card {
+                padding: 28px 20px;
+            }
+
+            .testimonial-card p {
+                font-size: 15px;
             }
 
             .announcement-card p {
