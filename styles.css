@@ -580,9 +580,20 @@
             max-width: 860px;
             margin: 0 auto;
             padding: 42px 38px;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            align-items: center;
+            gap: 32px;
             background: var(--off-white);
             border-top: 3px solid var(--gold);
             box-shadow: 0 12px 35px rgba(18,59,115,.08);
+        }
+
+        .testimonial-image {
+            width: 180px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 4px;
         }
 
         .testimonial-card p {
@@ -804,6 +815,14 @@
 
             .testimonial-card {
                 padding: 34px 28px;
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .testimonial-image {
+                width: 150px;
+                height: 200px;
+                justify-self: center;
             }
 
             .contact-details {
