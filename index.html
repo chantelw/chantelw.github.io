@@ -8,6 +8,7 @@
     <meta name="description" content="Peel Food Link is a grassroots initiative of Legacy Community Services, supporting the Peel Region and helping address food insecurity.">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
@@ -135,6 +136,24 @@
 
             </div>
 
+        </section>
+
+        <!-- IMPACT STATS -->
+        <section class="impact-stats" aria-label="Our impact">
+            <div class="impact-stats-inner">
+                <div class="impact-stat">
+                    <span class="impact-stat-value" data-count="12" data-suffix="+">12+</span>
+                    <span class="impact-stat-label">Years of service</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-stat-value" data-count="7200">7,200</span>
+                    <span class="impact-stat-label">Food Hampers Distributed</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="impact-stat-value" data-count="512">512</span>
+                    <span class="impact-stat-label">Clients served</span>
+                </div>
+            </div>
         </section>
 
         <!-- OUR MISSION -->
@@ -419,6 +438,57 @@
                 menuButton.setAttribute("aria-label", "Open navigation");
             });
         });
+
+        const impactStats = document.querySelector(".impact-stats");
+        const impactCounts = document.querySelectorAll(".impact-stat-value");
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if ("IntersectionObserver" in window) {
+            if (!prefersReducedMotion) {
+                impactCounts.forEach(function (counter) {
+                    counter.textContent = "0" + (counter.dataset.suffix || "");
+                });
+            }
+
+            const statsObserver = new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) {
+                    impactStats.classList.add("is-visible");
+
+                    if (!prefersReducedMotion) {
+                        const duration = 1800;
+
+                        impactCounts.forEach(function (counter) {
+                            const target = Number(counter.dataset.count);
+                            let startTime;
+
+                            function updateCount(timestamp) {
+                                if (startTime === undefined) {
+                                    startTime = timestamp;
+                                }
+
+                                const progress = Math.min((timestamp - startTime) / duration, 1);
+                                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                                const currentValue = Math.floor(target * easedProgress);
+
+                                counter.textContent = currentValue.toLocaleString("en-US") +
+                                    (counter.dataset.suffix || "");
+
+                                if (progress < 1) {
+                                    requestAnimationFrame(updateCount);
+                                }
+                            }
+
+                            requestAnimationFrame(updateCount);
+                        });
+                    }
+
+                    statsObserver.disconnect();
+                }
+            }, { threshold: 0.25 });
+
+            impactStats.classList.add("is-animated");
+            statsObserver.observe(impactStats);
+        }
     </script>
 
 </body>

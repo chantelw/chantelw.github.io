@@ -352,6 +352,70 @@
         }
 
         /* =========================
+           IMPACT STATS
+        ========================= */
+
+        .impact-stats {
+            padding: 48px 5%;
+            background: var(--off-white);
+        }
+
+        .impact-stats-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .impact-stat {
+            min-width: 0;
+            padding: 4px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .impact-stat + .impact-stat {
+            border-left: 1px solid var(--border);
+        }
+
+        .impact-stat-value {
+            color: var(--blue);
+            font-size: clamp(42px, 5vw, 66px);
+            font-weight: 750;
+            line-height: 1.1;
+            letter-spacing: -.04em;
+            transition: opacity .65s ease, transform .65s ease;
+        }
+
+        .impact-stat-label {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        .impact-stats.is-animated .impact-stat-value {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+
+        .impact-stats.is-visible .impact-stat-value {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .impact-stats.is-visible .impact-stat:nth-child(2) .impact-stat-value {
+            transition-delay: .12s;
+        }
+
+        .impact-stats.is-visible .impact-stat:nth-child(3) .impact-stat-value {
+            transition-delay: .24s;
+        }
+
+        /* =========================
            FEATURE SECTION
         ========================= */
 
@@ -781,11 +845,21 @@
             }
 
             .intro,
+            .impact-stats,
             .features,
             .cta,
             .testimonials,
             .contact {
                 padding: 75px 6%;
+            }
+
+            .impact-stat {
+                padding-right: 14px;
+                padding-left: 14px;
+            }
+
+            .impact-stat-label {
+                font-size: 13px;
             }
 
             .feature-grid {
@@ -883,10 +957,28 @@
             }
 
             .intro,
+            .impact-stats,
             .features,
             .cta,
             .contact {
                 padding: 58px 6%;
+            }
+
+            .impact-stats-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-stat {
+                padding: 18px 0;
+            }
+
+            .impact-stat + .impact-stat {
+                border-left: 0;
+                border-top: 1px solid var(--border);
+            }
+
+            .impact-stat-value {
+                font-size: 48px;
             }
 
             .section-grid,
@@ -938,6 +1030,11 @@
                 margin-bottom: 22px;
             }
 
+            .impact-stats {
+                padding-top: 38px;
+                padding-bottom: 38px;
+            }
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -951,5 +1048,11 @@
             .contact-item a {
                 font-size: 16px;
                 overflow-wrap: anywhere;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .impact-stat-value {
+                transition: none;
             }
         }
